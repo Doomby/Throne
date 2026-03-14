@@ -154,8 +154,9 @@ jobs:
         shell: cmd
         if: matrix.platform == 'windows-latest' && matrix.qt_version != '6.2.12'
         run: |
+          choco install nsis
           cp .\script\windows_installer.nsi .
-          makensis windows_installer.nsi
+          "C:\Program Files (x86)\NSIS\makensis.exe" windows_installer.nsi
           cp ThroneSetup.exe deployment/
       - name: Linux - Generate MakeFile and Build
         shell: bash
