@@ -15,29 +15,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - cross_os: public_res
-            cross_arch: public_res
-            go_version: "1.25.0"
           - cross_os: windows
             cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: linux
-            cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: linux
-            cross_arch: arm64
-            go_version: "1.25.0"
-          - cross_os: darwin
-            cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: darwin
-            cross_arch: arm64
-            go_version: "1.25.0"
-          - cross_os: windowslegacy
-            cross_arch: amd64
-            go_version: "1.25.0"
-          - cross_os: windowslegacy
-            cross_arch: 386
             go_version: "1.25.0"
       fail-fast: false
     runs-on: ubuntu-latest
@@ -101,24 +80,6 @@ jobs:
           - platform: windows-latest
             qt_version: "6.9.0"
             target: x86_64
-          - platform: ubuntu-22.04
-            qt_version: "6.9.0"
-            target: amd64
-          - platform: ubuntu-24.04-arm
-            qt_version: "6.9.0"
-            target: arm64
-          - platform: macos-latest
-            qt_version: "6.9.0"
-            target: x86_64
-          - platform: macos-latest
-            qt_version: "6.9.0"
-            target: arm64
-          - platform: windows-latest
-            qt_version: "6.2.12"
-            target: x86_64
-          - platform: windows-latest
-            qt_version: "6.2.12"
-            target: i686
       fail-fast: false
     runs-on: ${{ matrix.platform }}
     env:
