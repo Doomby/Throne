@@ -15,6 +15,9 @@ jobs:
     strategy:
       matrix:
         include:
+          - cross_os: public_res
+            cross_arch: public_res
+            go_version: "1.25.0"
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.25.0"
